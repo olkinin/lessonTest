@@ -13,24 +13,7 @@ public class Human implements Move {
         this.height = height;
 
     }
-//    public static void runAndJump(Object[] participants, Object[] let) {
-//        for (int i = 0; i < participants.length; i++) {
-//            for (int j = 0; j < let.length; j++) {
-//                if ((participants[i] instanceof Human) && (let[j] instanceof Treadmill)) {
-//                    if (((Human) participants[i]).distance >= ((Treadmill) let[j]).distance) {
-//                        System.out.println("The man " + ((Human) participants[i]).name + " run the distance");
-//                    }
-//                    else {System.out.println(" The " + ((Human) participants[i]).name + " could not run");
-//                        break;}
-//                } else if ((participants[i] instanceof Human) && (let[j] instanceof Wall)) {
-//                    if (((Human) participants[i]).height >= ((Wall) let[j]).height)
-//                    {System.out.println("The man " + ((Human) participants[i]).name + " jump on the let");
-//                    }
-//                else {System.out.println(" The " + ((Human) participants[i]).name + " could not jump");
-//                    break;
-//                }}
-//            }
-//        }
+
 
     @Override
     public boolean run(Treadmill treadmill) {
@@ -47,7 +30,7 @@ public class Human implements Move {
 
     @Override
     public boolean jump(Wall wall) {
-        if (height <= wall.getHeight()) {
+        if (height >= wall.getHeight()) {
             System.out.println("Human " + name + " jump "+wall.getHeight());
             return true;}
         else {

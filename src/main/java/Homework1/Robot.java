@@ -25,7 +25,7 @@ public class Robot implements Move {
 
     @Override
     public boolean jump(Wall wall) {
-        if (height <= wall.getHeight()) {
+        if (height >= wall.getHeight()) {
             System.out.println("Robot " + name + " jump "+wall.getHeight());
             return true;}
         else {
