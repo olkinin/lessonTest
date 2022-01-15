@@ -22,21 +22,35 @@ public class HomeWork {
                 new Robot("A1", 50, 50),
                 new Robot("Z", 100, 30)};
         andJumping(moves, let);
+
     }
 
     public static void andJumping(Move[] moves, Object[] let) {
-                     for (int i = 0; i < moves.length; i++) {
-                for (int j = 0; j < let.length; j++) {
-                   {if ((moves[i] instanceof Human) && (let[j] instanceof Treadmill)) {
-                        moves[i].run((Treadmill) let[j]);
-                    } else if ((moves[i] instanceof Human) && (let[j] instanceof Wall)) {
-                        moves[i].jump((Wall) let[j]);
-                    }
+        for (int i = 0; i < moves.length; i++) {
+            for (int j = 0; j < let.length; j++) {
+                if ((moves[i] instanceof Human) && (let[j] instanceof Treadmill)) {
+                    moves[i].run((Treadmill) let[j]);
+                } else if ((moves[i] instanceof Human) && (let[j] instanceof Wall)) {
+                    moves[i].jump((Wall) let[j]);
+                }
+                {if ((moves[i] instanceof Cat) && (let[j] instanceof Treadmill)) {
+                    moves[i].run((Treadmill) let[j]);
+                } else if ((moves[i] instanceof Cat) && (let[j] instanceof Wall)) {
+                    moves[i].jump((Wall) let[j]);
+                }
+                }
+                {if ((moves[i] instanceof Robot) && (let[j] instanceof Treadmill)) {
+                    moves[i].run((Treadmill) let[j]);
+                } else if ((moves[i] instanceof Robot) && (let[j] instanceof Wall)) {
+                    moves[i].jump((Wall) let[j]);
+                }
                 }
             }
         }
     }
 }
+
+
 
 
 
