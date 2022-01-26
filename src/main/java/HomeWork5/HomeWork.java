@@ -35,11 +35,6 @@ public class HomeWork {
         for (int i = 0; i < size; i++) {
             arr[i] = 1;
         }
-        for (int i = 0; i < size; i++) {
-            arr[i] = (float)
-                    (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) *
-                            Math.cos(0.4f + i / 2));
-        }
 
         long start = System.currentTimeMillis();
         float[] arrLeft = new float[half];
@@ -49,19 +44,19 @@ public class HomeWork {
         long c = System.currentTimeMillis();
         Thread thread1 = new Thread(() -> {
 
-                for (int i = 0; i < arrLeft.length; i++) {
-                    arrLeft[i] = (float) (arrLeft[i] * Math.sin(0.2f + i / 5) *
-                            Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
-                }
+            for (int i = 0; i < arrLeft.length; i++) {
+                arrLeft[i] = (float) (arrLeft[i] * Math.sin(0.2f + i / 5) *
+                        Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            }
         });
         Thread thread2 = new Thread(() -> {
-                           {
-                    for (int i = 0; i < arrRight.length; i++) {
-                        arrRight[i] = (float) (arrRight[i] * Math.sin(0.2f + (half + i) / 5) *
-                                Math.cos(0.2f + (half + i) / 5) * Math.cos(0.4f + (half + i) / 2));
-                    }
+            {
+                for (int i = 0; i < arrRight.length; i++) {
+                    arrRight[i] = (float) (arrRight[i] * Math.sin(0.2f + (half + i) / 5) *
+                            Math.cos(0.2f + (half + i) / 5) * Math.cos(0.4f + (half + i) / 2));
                 }
-                    });
+            }
+        });
         thread1.start();
         thread2.start();
         try {
@@ -76,9 +71,8 @@ public class HomeWork {
         System.arraycopy(arrLeft, 0, newArr, 0, half);
         System.arraycopy(arrRight, 0, newArr, half, half);
         long n = System.currentTimeMillis();
-            System.out.println(n - start);
-            if (!Arrays.equals(arr, newArr)) {
-                System.out.println("not equals");
-        }
+        System.out.println(n - start);
+
     }
 }
+
