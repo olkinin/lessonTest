@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class Server {
 
-    private static final int PORT = 8189;
+    private static final int PORT = 8190;
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
@@ -16,7 +16,7 @@ public class Server {
     ArrayList<Listener> listener = new ArrayList<>();
 
     public static void main(String[] args) {
-        new Server().start();
+       new Server().start();
 
     }
 

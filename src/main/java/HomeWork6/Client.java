@@ -8,7 +8,7 @@ import java.net.SocketException;
 import java.util.Scanner;
 
 public class Client {
-    private static final int PORT = 8189;
+    private static final int PORT = 8190;
     private static final String HOST = "127.0.0.1";
     private Socket socket;
     private DataInputStream in;
@@ -27,8 +27,9 @@ public class Client {
             startConsoleThread();
             while (true) {
                 String message = in.readUTF();
-                System.out.println("Received: " + message);
+
             }
+
         } catch (SocketException e) {
             System.out.println("Connection to server has been lost");
         } catch (IOException e) {
@@ -48,11 +49,12 @@ public class Client {
                 System.out.print("Enter message for server >>>> ");
                 while (!Thread.currentThread().isInterrupted()) {
                     String clientMessage = sc.nextLine();
+                    out.writeUTF(clientMessage);
                     if (clientMessage.equalsIgnoreCase("/quit")) {
                         out.writeUTF("/end");
                         shutdown();
                     }
-                    out.writeUTF(clientMessage);
+
                 }
             } catch (IOException e) {
                 e.printStackTrace();
