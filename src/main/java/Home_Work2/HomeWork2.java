@@ -26,9 +26,9 @@ public class HomeWork2 {
                     k = j + 1;
                 }
             if (n != 4 && k != 4) {
-                throw new MyArraySizeException("Массив неподходящей длинны");
+                throw new main.java.Home_Work2.MyArrayDataException("Массив неподходящей длинны");
             }else{newArray(arr);}
-        } catch (MyArraySizeException e) {
+        } catch (main.java.Home_Work2.MyArrayDataException e) {
             e.printStackTrace();
         }
     }
@@ -44,7 +44,7 @@ public class HomeWork2 {
                     sum = sum + arrInt[i][j];
                 }System.out.println("Сумма = " +sum);
         } catch (
-                NumberFormatException e) { throw new MyArrayDataException("Недопустимый символ");
+                NumberFormatException e) { throw new main.java.Home_Work2.MyArrayDataException("Недопустимый символ");
         }
     }
 }

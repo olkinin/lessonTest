@@ -34,14 +34,14 @@ public class Homework {
         }
 
 
-        TelefoneDirectory telefoneDirectory = new TelefoneDirectory();
-        telefoneDirectory.add("324-55-55", "Иванов");
-        telefoneDirectory.add("111-55-55", "Иванов");
-        telefoneDirectory.add("222-15-55", "Петров");
-        telefoneDirectory.add("111-25-15", "Васильев");
-        telefoneDirectory.set("Иванов");
-        telefoneDirectory.set("Петров");
-
+//        TelefoneDirectory telefoneDirectory = new TelefoneDirectory();
+//        telefoneDirectory.add("324-55-55", "Иванов");
+//        telefoneDirectory.add("111-55-55", "Иванов");
+//        telefoneDirectory.add("222-15-55", "Петров");
+//        telefoneDirectory.add("111-25-15", "Васильев");
+//        telefoneDirectory.set("Иванов");
+//        telefoneDirectory.set("Петров");
+//
 
     }
 
